@@ -1,0 +1,52 @@
+{{#if shortURL}}
+  <div id="shortenURLResult">
+    <fieldset disabled>
+      <div class="form-group">
+        <label for="disabledTextInput"><h3>Success! Please use this link!
+          </h3></label>
+        <input
+          type="text"
+          id="generatedURL"
+          class="form-control"
+          placeholder="http://localhost:3000/shortenProject/{{shortURL}}"
+        />
+      </div>
+    </fieldset>
+
+    <button
+      type="button"
+      class="copy btn btn-success"
+      onclick="copy()"
+    >Copy</button>
+  </div>
+
+  <script>
+    function copy() { const URL = document.getElementById("generatedURL")
+    navigator.clipboard.writeText(URL.placeholder) .then(() => alert('copied'))
+    .catch(error => console.log(error)) }
+  </script>
+{{else}}
+  <div id="shortenURLForm">
+    <img
+      src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png"
+      alt="短網址"
+      style="width: 250px; height:250px"
+    />
+    <form class="form-inline form-Area" action="/shorten" method="post">
+      <label class="sr-only" for="inlineFormInputName2"><h4>Please input
+          OriginalURL</h4>
+      </label>
+      <input
+        type="text"
+        class="form-control mb-2 mr-sm-2 inputArea"
+        placeholder="please input your URL"
+        id="url-input"
+        name="originalUrl"
+        required
+      />
+
+      <button type="submit" class="btn btn-primary mb-2">Shorten</button>
+    </form>
+
+  </div>
+{{/if}}

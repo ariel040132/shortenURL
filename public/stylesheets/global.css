@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.navbar,
+#shortenURLForm,
+#shortenURLResult {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.form-Area {
+  text-align: center;
+}
+#shortenURLForm {
+  margin: 0px 200px;
+}
+img {
+  margin: 20px 310px;
+}
+
+#shortenURLResult {
+  margin: 20px 350px;
+}
+
+.btn-success {
+  margin: 8px 0px;
+}
